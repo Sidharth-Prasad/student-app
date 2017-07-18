@@ -1,41 +1,64 @@
 <div class="container" *ngIf="hidden">
   <h1>Address Form</h1>
-  <form (ngSubmit)="onSubmit()" #addressForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
 
-      <div class="form-group">
+    <div class="form-group">
       <label for="bio">About Me</label>
-      <div *ngFor="let item of data.bio">
-        <li>
-        <p>{{item.type}}</p>
-        <select class="form-control" id= {{item.type}} required>
+      <div class="row">
+        <div class="col-xs-4 col-sm-6" *ngFor="let item of studentData.bio">
+
+          <p>{{item.type}}</p>
+          <select class="form-control" id="{{item.type}}" required>
           <option *ngFor="let list of item.data" [value]=list>{{list}}</option>
         </select>
-        </li>
-      </div> 
-    </div>  
-     
-     <div class="form-group">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="interests">Interests</label>
-      <div *ngFor="let item of data.interests">
-        <p>{{item.type}}</p>
-        <ul>
+      <div *ngFor="let item of studentData.interests">
+        <p style="text-align:left;"><b>{{item.type}}</b></p>
+        <ul style="list-style: none; text-align:left;">
           <li *ngFor="let list of item.data">
-            <input type="checkbox" name="interests" value= {{list}}> {{list}}<br>
+            <input type="checkbox" name="interests" value="{{list}}"> {{list}}<br>
           </li>
         </ul>
       </div>
-    </div> 
-
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary">NA</button>
-      <button type="button" class="btn btn-primary">1</button>
-      <button type="button" class="btn btn-primary">2</button>
-      <button type="button" class="btn btn-primary">3</button>
-      <button type="button" class="btn btn-primary">4</button>
-      <button type="button" class="btn btn-primary">5</button>
     </div>
 
-    <button type="submit" class="btn btn-success" [disabled]="!addressForm.form.valid">Submit</button>
+    <div class="form-group">
+      <label for="ratings">Ratings</label>
+      <div *ngFor="let item of worldData">
+        <h4 style="text-align:left;"><b>{{item.type}}</b></h4>
+        <ul style="list-style: none; text-align:left;">
+          <li *ngFor="let category of item.data">
+            <h5><b>{{category.type}}</b></h5>
+            <div class="row" style="margin-bottom:10px;" *ngFor="let location of category.data">
+              <div class="col-xs-6" style="text-align:right;">{{location}}</div>
+              <div class="col-xs-6">
+                <!-- <div class="btn-group">
+                  <button type="button" class="btn btn-primary">NA</button>
+                  <button type="button" class="btn btn-primary">1</button>
+                  <button type="button" class="btn btn-primary">2</button>
+                  <button type="button" class="btn btn-primary">3</button>
+                  <button type="button" class="btn btn-primary">4</button>
+                  <button type="button" class="btn btn-primary">5</button>
+                </div> -->
+                <input type="radio" name="radio-{{location}}" value="male"> Male<br>
+                <input type="radio" name="radio-{{location}}" value="female"> Female<br>
+                <input type="radio" name="radio-{{location}}" value="other"> Other
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!studentForm.form.valid">Submit</button>
 
   </form>
 </div>

@@ -25,7 +25,7 @@
             ]
         },
         {
-            "Type": "Difficulty",
+            "type": "Difficulty",
             "data": [
                 "100s",
                 "200s",

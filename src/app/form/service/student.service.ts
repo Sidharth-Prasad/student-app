@@ -10,13 +10,19 @@ import 'rxjs/add/operator/toPromise';
 export class StudentService {
 
   configData : BehaviorSubject<any>;
+  worldData : BehaviorSubject<any>;
 
   get readConfigDataObservable() {
     return this.configData.asObservable();
   }
- 
+
+  get readWorldDataObservable() {
+    return this.worldData.asObservable();
+  }
+
   constructor(private http: Http) {
     this.configData = new BehaviorSubject({});
+    this.worldData = new BehaviorSubject({});
 
   }
  
@@ -32,6 +38,11 @@ export class StudentService {
     this.http
                .get(`../../assets/JSON/world.json`)
                .map(response => response.json())
-               .subscribe(res => {me.configData.next(res)});
+               .subscribe(res => {me.worldData.next(res)});
+  }
+
+  postFormData(): any{
+
+
   }
 }
