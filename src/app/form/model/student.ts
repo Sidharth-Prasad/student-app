@@ -15,10 +15,5 @@ export class Student {
     public cultural: string,
     public arts: string,
     public travel: string,
-    public industry: string,
-    public numberOfCompanies: string,
-    public gender: string,
-    public height: string,
-    public weight: string
   ) { }
 }

@@ -22,7 +22,7 @@
         <p style="text-align:left;"><b>{{item.type}}</b></p>
         <ul style="list-style: none; text-align:left;">
           <li *ngFor="let list of item.data">
-            <input type="checkbox" name="interests" value="{{list}}"> {{list}}<br>
+            <input type="radio" name="radio-{{item.type}}" value="{{list}}"> {{list}}<br>
           </li>
         </ul>
       </div>
@@ -46,9 +46,12 @@
                   <button type="button" class="btn btn-primary">4</button>
                   <button type="button" class="btn btn-primary">5</button>
                 </div> -->
-                <input type="radio" name="radio-{{location}}" value="male"> Male<br>
-                <input type="radio" name="radio-{{location}}" value="female"> Female<br>
-                <input type="radio" name="radio-{{location}}" value="other"> Other
+                <input type="radio" name="radio-{{location}}" value="NA">NA<br>
+                <input type="radio" name="radio-{{location}}" value="1">1<br>
+                <input type="radio" name="radio-{{location}}" value="2">2<br>
+                <input type="radio" name="radio-{{location}}" value="3">3<br>
+                <input type="radio" name="radio-{{location}}" value="4">4<br>
+                <input type="radio" name="radio-{{location}}" value="5">5<br>
               </div>
             </div>
           </li>
