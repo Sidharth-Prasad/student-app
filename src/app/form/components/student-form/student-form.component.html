@@ -1,0 +1,41 @@
+<div class="container" *ngIf="hidden">
+  <h1>Address Form</h1>
+  <form (ngSubmit)="onSubmit()" #addressForm="ngForm">
+
+      <div class="form-group">
+      <label for="bio">About Me</label>
+      <div *ngFor="let item of data.bio">
+        <li>
+        <p>{{item.type}}</p>
+        <select class="form-control" id= {{item.type}} required>
+          <option *ngFor="let list of item.data" [value]=list>{{list}}</option>
+        </select>
+        </li>
+      </div> 
+    </div>  
+     
+     <div class="form-group">
+      <label for="interests">Interests</label>
+      <div *ngFor="let item of data.interests">
+        <p>{{item.type}}</p>
+        <ul>
+          <li *ngFor="let list of item.data">
+            <input type="checkbox" name="interests" value= {{list}}> {{list}}<br>
+          </li>
+        </ul>
+      </div>
+    </div> 
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">NA</button>
+      <button type="button" class="btn btn-primary">1</button>
+      <button type="button" class="btn btn-primary">2</button>
+      <button type="button" class="btn btn-primary">3</button>
+      <button type="button" class="btn btn-primary">4</button>
+      <button type="button" class="btn btn-primary">5</button>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!addressForm.form.valid">Submit</button>
+
+  </form>
+</div>

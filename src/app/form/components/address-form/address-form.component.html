@@ -1,0 +1,36 @@
+<div class="container">
+	<h1>Address Form</h1>
+	<form (ngSubmit)="onSubmit()" #addressForm="ngForm">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #spy>
+			<br>TODO: remove this: {{spy.className}}
+
+		</div>
+
+		<div class="form-group">
+			<label for="age">Age</label>
+			<input type="text" class="form-control" id="age">
+		</div>
+
+		
+		<div class="form-group">
+			<label for="university">University</label>
+			<select class="form-control" id="university" required>
+				<option *ngFor="let uni of university" [value]="uni">{{uni}}</option>
+			</select>
+		</div>
+
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary">NA</button>
+			<button type="button" class="btn btn-primary">1</button>
+			<button type="button" class="btn btn-primary">2</button>
+			<button type="button" class="btn btn-primary">3</button>
+			<button type="button" class="btn btn-primary">4</button>
+			<button type="button" class="btn btn-primary">5</button>
+		</div>
+
+		<button type="submit" class="btn btn-success" [disabled]="!addressForm.form.valid">Submit</button>
+
+	</form>
+</div>
