@@ -1,232 +1,63 @@
-[{
-	"type": "Boston",
-	"data": [{
-			"type": "University",
-			"data": [
-				"Harvard",
-				"MIT",
-				"Boston"
-			]
-		},
-		{
-			"type": "Retail Stores",
-			"data": [
-				"Macy's",
-				"Nordstrom",
-				"TJ Maxx"
-			]
-		},
-		{
-			"type": "Food/Drinks",
-			"data": [
-				"Drink",
-				"Townsman",
-				"Sweet Cheeks"
-			]
-		},
-		{
-			"type": "Professional Companies",
-			"data": [
-				"Boston Consulting Group",
-				"Boston Interactive"
-			]
-		},
-		{
-			"type": "Outdoor Activities",
-			"data": [
-				"Charles River",
-				"Esplanade"
-			]
-		},
-		{
-			"type": "Tourist Attractions",
-			"data": [
-				"Freedom Trail",
-				"New England Aquarium"
-			]
-		},
-		{
-			"type": "Cultural",
-			"data": [
-				"Museum of Science",
-				"Harvard Museum of Natural History",
-				"Boston Tea Party Ship"
-			]
-		}
-	]
-}, {
-	"type": "Seattle",
-	"data": [{
-			"type": "University",
-			"data": [
-				"UW",
-				"Seattle University",
-				"Bellevue College"
-			]
-		},
-		{
-			"type": "Retail Stores",
-			"data": [
-				"Target",
-				"Nordstrom",
-				"Costco"
-			]
-		},
-		{
-			"type": "Food/Drinks",
-			"data": [
-				"Starbucks",
-				"Pike Place",
-				"Whole Foods"
-			]
-		},
-		{
-			"type": "Professional Companies",
-			"data": [
-				"Microsoft",
-				"Amazon",
-				"Boeing"
-			]
-		},
-		{
-			"type": "Outdoor Activities",
-			"data": [
-				"Mt. Rainier",
-				"Rattlesnake Ridge",
-				"Lake Washington"
-			]
-		},
-		{
-			"type": "Tourist Attractions",
-			"data": [
-				"Museum of Flight",
-				"Pacific Science Center",
-				"Chinatown"
-			]
-		},
-		{
-			"type": "Cultural",
-			"data": [
-				"LGBTQ Pride Day",
-				"Seattle Cannabis Day",
-				"Seatle Art Musuem"
-			]
-		}
-	],
-	"West Lafayette": [{
-			"type": "University",
-			"data": [
-				"Purdue",
-				"Indiana University",
-				"IUPUI"
-			]
-		},
-		{
-			"type": "Retail Stores",
-			"data": [
-				"Tark Market",
-				"CVS",
-				"Freshens"
-			]
-		},
-		{
-			"type": "Food/Drinks",
-			"data": [
-				"Yummy Time",
-				"XXX",
-				"Five Guys"
-			]
-		},
-		{
-			"type": "Professional Companies",
-			"data": [
-				"Boeing",
-				"Rolls Royce",
-				"Purdue Research Park"
-			]
-		},
-		{
-			"type": "Outdoor Activities",
-			"data": [
-				"Paintball",
-				"IM Sports Fields",
-				"Ross Aide Stadium"
-			]
-		},
-		{
-			"type": "Tourist Attractions",
-			"data": [
-				"Colombian Park Zoo",
-				"Haan Musuem of Indiana Art",
-				"Fort Ouiatenon"
-			]
-		},
-		{
-			"type": "Cultural",
-			"data": [
-				"Grand Prix",
-				"Convocations",
-				"AAARC"
-			]
-		}
-	]
-}, 
-{
-	"type": "Pittsburgh",
-	"data": [{
-			"type": "University",
-			"data": [
-				"Carnegie Mellon",
-				"University of Pittsburgh",
-				"Duquesne University"
-			]
-		},
-		{
-			"type": "Retail Stores",
-			"data": [
-				"Giant Eagle Supermarket",
-				"American Eagle Outfitters",
-				"Sheetz"
-			]
-		},
-		{
-			"type": "Food/Drinks",
-			"data": [
-				"Stacked",
-				"Butcher and the Rye",
-				"Vocelli Pizza"
-			]
-		},
-		{
-			"type": "Professional Companies",
-			"data": [
-				"PNC Financial",
-				"Heinz Company",
-				"CMU Robotics Lab"
-			]
-		},
-		{
-			"type": "Outdoor Activities",
-			"data": [
-				"National Aviary",
-				"Venture Outdoors"
-			]
-		},
-		{
-			"type": "Tourist Attractions",
-			"data": [
-				"Carnegie Museum of Natural History",
-				"Carnegie Museum of Art",
-				"Andy Warhol Musuem"
-			]
-		},
-		{
-			"type": "Cultural",
-			"data": [
-				"Benedeum Center of Fine Arts",
-				"Heinz Hall",
-				"Stage AE"
-			]
-		}
-	]
-}]
+[
+	{
+		"type": "Seattle",
+		"data": [
+			{
+				"type": "University",
+				"data": [
+					"UW",
+					"SeattleUniversity",
+					"BellevueCollege"
+				]
+			},
+			{
+				"type": "Retail Stores",
+				"data": [
+					"Target",
+					"Nordstrom",
+					"Costco"
+				]
+			},
+			{
+				"type": "Food/Drinks",
+				"data": [
+					"Starbucks",
+					"PikePlace",
+					"WholeFoods"
+				]
+			},
+			{
+				"type": "Professional Companies",
+				"data": [
+					"Microsoft",
+					"Amazon",
+					"Boeing"
+				]
+			},
+			{
+				"type": "Outdoor Activities",
+				"data": [
+					"MtRainier",
+					"RattlesnakeRidge",
+					"LakeWashington"
+				]
+			},
+			{
+				"type": "Tourist Attractions",
+				"data": [
+					"MuseumOfFlight",
+					"PacificScienceCenter",
+					"Chinatown"
+				]
+			},
+			{
+				"type": "Cultural",
+				"data": [
+					"LGBTQPrideDay",
+					"SeattleCannabisDay",
+					"SeatleArtMusuem"
+				]
+			}
+		]
+	}
+]

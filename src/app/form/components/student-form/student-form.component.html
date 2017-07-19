@@ -9,7 +9,9 @@
 
           <p>{{item.type}}</p>
           <select class="form-control" id="{{item.type}}" required>
-          <option *ngFor="let list of item.data" [value]=list>{{list}}</option>
+          <option *ngFor="let list of item.data" [value]=list
+          
+          >{{list}}</option>
         </select>
 
         </div>
