@@ -40,11 +40,11 @@ export class StudentFormComponent implements OnInit {
   university = ['UW', 'Purdue', 'CMU', 'Boston'];
 
 
-  model = new Student(2319, 'Mike Wazowski', '18-21','UW','Public','100s','<10','<2.0','Engineering','Before 2017','Football','Comics','Photography','Study Abroad',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+  model = new Student(21,"Boston","Male",3.5,"Asian","Hinduism","STEM","Engineering","Video Games");
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { this.submitted = true;}
 
   // newStudent(){
   //   this.model = new Student();
