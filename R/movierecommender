@@ -1,0 +1,14 @@
+function () 
+{
+library("recommenderlab")
+data("MovieLense")
+## load library and dataset
+MovieLense100 <- MovieLense[rowCounts(MovieLense) > 100,]
+
+train <- MovieLense100[1:50]
+rec <- Recommender(train, method = "UBCF")
+
+pre <- predict(rec, MovieLense100[101:102], n = 10)
+
+as(pre, "list")
+}
