@@ -21,56 +21,88 @@ recommend <- function(student) {
   data <- read.csv("CollectiveSampleData2.csv", head=TRUE, sep=",")
   
   test <- matrix(nrow = 1, ncol = 39)
-  
+
   test <- as.data.frame(test)
-  
+
   test[,1:39] <- 0
-  
+
   train <- data[1:100, 2:40]
-  
-  colnames(test) <- colnames(train)
+
+  colnames(test) <- c("Age","Pittsburgh","West Lafayette","Boston","Seattle","Male","Female","Other Gender","GPA","American Indian/Alaska Native","Hispanic or Latino","White","Black or African American","Asian","Native Hawaiin or Pacific Islander","Hinduism","Christianity","Islam","Buddhism","Atheist","Other Religion","Finance","Education","Retail","Logistical/Utility Services","STEM","Arts","Social Studies","Natural Sciences","Business","Engineering","Humanities","Other Major","Visual Arts","Video Games","Theatre","Sports","Music","Literature")
   
   test[,"Age"] <- input[,"Age"]
-  
+
   test[,"GPA"] <- input[,"GPA"]
+
+  city <- input[,"City"]
   
-  test[,input[,"City"]] <- 1
+  city <- toString(city)
   
-  test[,input[,"Gender"]] <- 1
+  test[, city] <- 1
   
-  test[,input[,"Ethnicity"]] <- 1
+  gender <- input[,"Gender"]
   
-  test[,input[,"Religion"]] <- 1
+  gender <- toString(gender)
   
-  test[,input[,"Industry"]] <- 1
+  test[, gender] <- 1
   
-  test[,input[,"Major"]] <- 1
+  ethnicity <- input[,"Ethnicity"]
   
-  test[,input[,"Religion"]] <- 1
+  ethnicity <- toString(ethnicity)
+  
+  test[, ethnicity] <- 1
+  
+  religion <- input[,"Religion"]
+  
+  religion <- toString(religion)
+  
+  test[, religion] <- 1
+  
+  industry <- input[,"Industry"]
+  
+  industry <- toString(industry)
+  
+  test[, industry] <- 1
+  
+  major <- input[,"Major"]
+  
+  major <- toString(major)
+  
+  test[, major] <- 1
+  
+  interests <- input[,"Interests"]
+  
+  interests <- toString(interests)
+  
+  test[, interests] <- 1
   
   
+  
+  print(test)
+  
+
   #test <- data[101, 2:40]
-  
-  
-  
+
+
+
   cl <- t(data[1:100,1])
-  
+
   studentKNN <- knn(train, test, cl, k = 1, l = 0, prob = FALSE, use.all = TRUE)
-  
+
   neighbor <- as(studentKNN, "integer")
-  
+
   neighbor
-  
+
   items <- data[1:100,41:47]
-  
+
   itemTrain <- as(items, "matrix")
   itemTrain <- as(itemTrain, "realRatingMatrix")
-  
+
   studentRec <- Recommender(itemTrain[1:99,], "IBCF")
-  
+
   studentPre <- predict(studentRec, itemTrain[neighbor,], n=3)
-  
+
   output <- as(studentPre, "list")
-  
+
   output
 }  
