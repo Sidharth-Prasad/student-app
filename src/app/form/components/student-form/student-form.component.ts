@@ -12,6 +12,7 @@ import { Student } from "../../model/student";
 export class StudentFormComponent implements OnInit {
   studentData: any;
   worldData: any;
+  resultData: any;
   hidden: boolean = false;
   constructor(private _studentService: StudentService) { }
 
@@ -43,9 +44,20 @@ export class StudentFormComponent implements OnInit {
   submitted = false;
 
   onSubmit() {
-  this.submitted = true;
-  this._studentService.postFormData(this.model);
-  console.log(JSON.stringify(this.model))
+    var me = this;
+
+    this.submitted = true;
+    this._studentService.postFormData(this.model);
+   
+
+    this._studentService.readResultDataObservable.subscribe(val => {
+      console.log(val);
+      if (Object.keys(val).length > 0) {
+        me.resultData = val;
+        me.hidden = true;
+      }
+    });
+   //console.log("Result: "+me.resultData);
   }
 
   // newStudent(){
