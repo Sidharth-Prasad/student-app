@@ -76,11 +76,6 @@ recommend <- function(student) {
   
   test[, interests] <- 1
   
-  
-  
-  print(test)
-  
-  
   #test <- data[101, 2:40]
   
   
@@ -104,5 +99,8 @@ recommend <- function(student) {
   
   output <- as(studentPre, "list")
   
+  print(output)
+  
   output
+  
 }  

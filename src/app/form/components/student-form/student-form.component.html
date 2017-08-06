@@ -1,24 +1,115 @@
 <div class="container" *ngIf="hidden">
-  <h1>Student Form</h1>
+  <h3>Student Form</h3>
   <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
 
     <div class="form-group">
-      <label for="bio">About Me</label>
+      <label for="bio">Fill in Information About Yourself</label>
       <div class="row">
-        <div class="col-xs-4 col-sm-6" *ngFor="let item of studentData.bio">
 
-          <p>{{item.type}}</p>
-          <select class="form-control" id="{{item.type}}" required>
-          <option *ngFor="let list of item.data" [value]=list
-          
+        <div class="col-xs-4 col-sm-6">
+          <p>Age</p>
+          <select class="form-control" id="Age" [(ngModel)]="model.Age" name="Age" #Age="ngModel">
+          <option *ngFor="let list of studentData.Age.data" [value]=list       
           >{{list}}</option>
+        
         </select>
-
         </div>
+
+        <div class="col-xs-4 col-sm-6">
+          <p>City</p>
+          <select class="form-control" id="City" [(ngModel)]="model.City" name="City" #City="ngModel">
+          <option *ngFor="let list of studentData.City.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+        <div class="col-xs-4 col-sm-6">
+          <p>Ethnicity</p>
+          <select class="form-control" id="Ethnicity" [(ngModel)]="model.Ethnicity" name="Ethnicity" #Ethnicity="ngModel">
+          <option *ngFor="let list of studentData.Ethnicity.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+        <div class="col-xs-4 col-sm-6">
+          <p>GPA</p>
+          <select class="form-control" id="GPA" [(ngModel)]="model.GPA" name="GPA" #GPA="ngModel">
+          <option *ngFor="let list of studentData.GPA.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+        <div class="col-xs-4 col-sm-6">
+          <p>Gender</p>
+          <select class="form-control" id="Gender" [(ngModel)]="model.Gender" name="Gender" #Gender="ngModel">
+          <option *ngFor="let list of studentData.Gender.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+        <div class="col-xs-4 col-sm-6">
+          <p>Industry</p>
+          <select class="form-control" id="Industry" [(ngModel)]="model.Industry" name="Industry" #Industry="ngModel">
+          <option *ngFor="let list of studentData.Industry.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+        <div class="col-xs-4 col-sm-6">
+          <p>Interests</p>
+          <select class="form-control" id="Interests" [(ngModel)]="model.Interests" name="Interests" #Interests="ngModel">
+          <option *ngFor="let list of studentData.Interests.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+        <div class="col-xs-4 col-sm-6">
+          <p>Major</p>
+          <select class="form-control" id="Major" [(ngModel)]="model.Major" name="Major" #Major="ngModel">
+          <option *ngFor="let list of studentData.Major.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+        <div class="col-xs-4 col-sm-6">
+          <p>Religion</p>
+          <select class="form-control" id="Religion" [(ngModel)]="model.Religion" name="Religion" #Religion="ngModel">
+          <option *ngFor="let list of studentData.Religion.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+
+
+
+
+
       </div>
     </div>
 
-    <div class="form-group">
+
+
+    <!-- <div class="form-group">
+      <label for="bio">Fill in Information About Yourself</label>
+      <div class="row">
+        
+        <div class="col-xs-4 col-sm-6" *ngFor="let item of studentData.bio">
+          <p>{{item.type}}</p>
+          <select class="form-control" id="{{item.type}}">
+          <option *ngFor="let list of item.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+      </div>
+    </div>  -->
+
+    <!-- <div class="form-group">
       <label for="interests">Interests</label>
       <div *ngFor="let item of studentData.interests">
         <p style="text-align:left;"><b>{{item.type}}</b></p>
@@ -28,7 +119,7 @@
           </li>
         </ul>
       </div>
-    </div> 
+    </div> -->
 
     <!--<div class="form-group">
       <label for="ratings">Ratings</label>
@@ -64,6 +155,11 @@
 
 
     <button type="submit" class="btn btn-success" [disabled]="!studentForm.form.valid">Submit</button>
-
+    <button type="button" class="btn btn-default" (click)="newStudent(); student-form.reset()">New Recommendation</button>
   </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h2>We Recommend:</h2>
+
 </div>

@@ -7,6 +7,7 @@ import { AddressFormComponent } from './form/components/address-form/address-for
 import { StudentFormComponent } from './form/components/student-form/student-form.component';
 import { StudentService } from "./form/service/student.service";
 import { HttpModule }    from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpModule }    from '@angular/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]
