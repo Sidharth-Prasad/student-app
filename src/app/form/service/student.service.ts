@@ -13,6 +13,7 @@ export class StudentService {
 
   configData: BehaviorSubject<any>;
   worldData: BehaviorSubject<any>;
+  resultData: BehaviorSubject<any>;
 
   get readConfigDataObservable() {
     return this.configData.asObservable();
@@ -25,6 +26,7 @@ export class StudentService {
   constructor(private http: Http) {
     this.configData = new BehaviorSubject({});
     this.worldData = new BehaviorSubject({});
+    this.resultData = new BehaviorSubject({});
 
   }
 
@@ -45,12 +47,10 @@ export class StudentService {
 
   postFormData(student): any {
     var me = this;
-    var results: string[];
+    var results:object;
     this.http
-      //.post('http://localhost:8000/recommend?, "", { params: new HttpParams().set('student', JSON.stringify(student)) })
       .post('http://localhost:8000/recommend?student='+ JSON.stringify(student),"")
-      .subscribe(data => { results = data['results']; });
-
-    return results;
+      .map(response => response.json())
+      .subscribe(res => { me.resultData.next(res) });  
   }
 }
