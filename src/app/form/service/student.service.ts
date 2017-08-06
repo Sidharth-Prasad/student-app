@@ -42,6 +42,11 @@ export class StudentService {
   }
 
   postFormData(): any{
+    var me = this;
+    this.http
+               .get(`../../assets/JSON/world.json`)
+               .map(response => response.json())
+               .subscribe(res => {me.worldData.next(res)})
 
 
   }

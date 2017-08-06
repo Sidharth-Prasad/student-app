@@ -40,7 +40,7 @@ export class StudentFormComponent implements OnInit {
   university = ['UW', 'Purdue', 'CMU', 'Boston'];
 
 
-  model = new Student(21,"Boston","Male",3.5,"Asian","Hinduism","STEM","Engineering","Video Games");
+  model = new Student(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 
   submitted = false;
 
