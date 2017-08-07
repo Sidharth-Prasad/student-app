@@ -53,8 +53,23 @@ export class StudentService {
     this.http
       .post('http://localhost:8000/recommend?student='+ JSON.stringify(student),"")
       .map(response => response.json())
-      .subscribe(res => { me.resultData.next(res) });  
+      .subscribe(res => { me.getItemInfo(res)  });  
     
 
+  }
+
+  getItemInfo(rec: any){
+
+    var temp = ['Movie 1','Movie 2'];
+    for(var i in rec){
+      var data = rec[i];
+
+      // this.http
+      // .post('http://localhost:8000/recommend?student='+ JSON.stringify(data),"")
+      // .map(response => response.json())
+      // .subscribe(res => { temp.push(res)  }); 
+
+    }
+     this.resultData.next(temp);
   }
 }

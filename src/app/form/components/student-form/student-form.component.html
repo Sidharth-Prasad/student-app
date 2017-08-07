@@ -9,7 +9,7 @@
         <div class="col-xs-4 col-sm-6">
           <p>Age</p>
           <select class="form-control" id="Age" [(ngModel)]="model.Age" name="Age" #Age="ngModel">
-          <option *ngFor="let list of studentData.Age.data" [value]=list       
+          <option *ngFor="let list of studentData.Age.data" [value]=list  selected  
           >{{list}}</option>
         
         </select>
@@ -159,8 +159,19 @@
   </form>
 </div>
 
-<div [hidden]="!submitted">
+<div [hidden]="!submitted" class="container">
   <h2>We Recommend:</h2>
 
-  <li>{{resultData | json}}</li>
+  <!--<li>{{resultData | json}}</li> -->
+   <div class="row">
+    <div class="thumbnail card col-xs-4" *ngFor="let item of resultData">
+       <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{item}}</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    
+  </div> 
 </div>
