@@ -64,12 +64,17 @@ export class StudentService {
     for(var i in rec){
       var data = rec[i];
 
+      var params = {
+        "id":data
+      };
+    }
       this.http
-      .post('http://localhost:8000/itemInfo?item='+ JSON.stringify(data),"")
+      // .get('http://localhost:8000/iteminfo?item={' + '"ID":'+ '"' + data + '}"',"")
+      .get('http://localhost:8000/iteminfo?item='+JSON.stringify(params))
       .map(response => response.json())
       .subscribe(res => { temp.push(res)  });  
 
-    }
+    
      this.resultData.next(temp);
   }
 }

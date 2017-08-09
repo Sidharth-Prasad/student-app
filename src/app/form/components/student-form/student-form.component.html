@@ -1,83 +1,31 @@
-<div class="container" *ngIf="hidden">
-  <h3>Student Form</h3>
-  <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+<div class="container" *ngIf="hidden" style="max-width:600px">
+  <form class="student-form" #studentForm="ngForm">
 
     <div class="form-group">
       <label for="bio">Fill in Information About Yourself</label>
       <div class="row">
 
-        <div class="col-xs-4 col-sm-6">
-          <p>Age</p>
-          <select class="form-control" id="Age" [(ngModel)]="model.Age" name="Age" #Age="ngModel">
+        <div class="col-xs-4 col-sm-4 form-fields form-group">
+          <p>Age<span class="required">*</span></p>
+          <select class="form-control" id="Age" [(ngModel)]="model.Age" name="Age" required="true" #Age="ngModel">
           <option *ngFor="let list of studentData.Age.data" [value]=list  selected  
           >{{list}}</option>
         
         </select>
         </div>
 
-        <div class="col-xs-4 col-sm-6">
-          <p>City</p>
-          <select class="form-control" id="City" [(ngModel)]="model.City" name="City" #City="ngModel">
-          <option *ngFor="let list of studentData.City.data" [value]=list       
-          >{{list}}</option>
-        
-        </select>
-        </div>
-        <div class="col-xs-4 col-sm-6">
-          <p>Ethnicity</p>
-          <select class="form-control" id="Ethnicity" [(ngModel)]="model.Ethnicity" name="Ethnicity" #Ethnicity="ngModel">
-          <option *ngFor="let list of studentData.Ethnicity.data" [value]=list       
-          >{{list}}</option>
-        
-        </select>
-        </div>
-        <div class="col-xs-4 col-sm-6">
-          <p>GPA</p>
-          <select class="form-control" id="GPA" [(ngModel)]="model.GPA" name="GPA" #GPA="ngModel">
-          <option *ngFor="let list of studentData.GPA.data" [value]=list       
-          >{{list}}</option>
-        
-        </select>
-        </div>
-        <div class="col-xs-4 col-sm-6">
-          <p>Gender</p>
-          <select class="form-control" id="Gender" [(ngModel)]="model.Gender" name="Gender" #Gender="ngModel">
+        <div class="col-xs-4 col-sm-4 form-fields form-group">
+          <p>Gender<span class="required">*</span></p>
+          <select class="form-control" id="Gender" [(ngModel)]="model.Gender" name="Gender" required="true" #Gender="ngModel">
           <option *ngFor="let list of studentData.Gender.data" [value]=list       
           >{{list}}</option>
         
         </select>
         </div>
 
-        <div class="col-xs-4 col-sm-6">
-          <p>Industry</p>
-          <select class="form-control" id="Industry" [(ngModel)]="model.Industry" name="Industry" #Industry="ngModel">
-          <option *ngFor="let list of studentData.Industry.data" [value]=list       
-          >{{list}}</option>
-        
-        </select>
-        </div>
-
-        <div class="col-xs-4 col-sm-6">
-          <p>Interests</p>
-          <select class="form-control" id="Interests" [(ngModel)]="model.Interests" name="Interests" #Interests="ngModel">
-          <option *ngFor="let list of studentData.Interests.data" [value]=list       
-          >{{list}}</option>
-        
-        </select>
-        </div>
-
-        <div class="col-xs-4 col-sm-6">
-          <p>Major</p>
-          <select class="form-control" id="Major" [(ngModel)]="model.Major" name="Major" #Major="ngModel">
-          <option *ngFor="let list of studentData.Major.data" [value]=list       
-          >{{list}}</option>
-        
-        </select>
-        </div>
-
-        <div class="col-xs-4 col-sm-6">
-          <p>Religion</p>
-          <select class="form-control" id="Religion" [(ngModel)]="model.Religion" name="Religion" #Religion="ngModel">
+        <div class="col-xs-4 col-sm-4 form-fields form-group">
+          <p>Religion<span class="required">*</span></p>
+          <select class="form-control" id="Religion" [(ngModel)]="model.Religion" name="Religion" required="true" #Religion="ngModel">
           <option *ngFor="let list of studentData.Religion.data" [value]=list       
           >{{list}}</option>
         
@@ -85,9 +33,66 @@
         </div>
 
 
+        <div class="col-xs-4 col-sm-6 form-fields form-group">
+          <p>City<span class="required">*</span></p>
+          <select class="form-control" id="City" [(ngModel)]="model.City" name="City" required="true" #City="ngModel">
+          <option *ngFor="let list of studentData.City.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+        <div class="col-xs-4 col-sm-6 form-fields form-group">
+          <p>Ethnicity<span class="required">*</span></p>
+          <select class="form-control" id="Ethnicity" [(ngModel)]="model.Ethnicity" required="true" name="Ethnicity" #Ethnicity="ngModel">
+          <option *ngFor="let list of studentData.Ethnicity.data" [value]=list  selected   
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-xs-4 col-sm-6 form-fields form-group">
+          <p>Industry<span class="required">*</span></p>
+          <select class="form-control" id="Industry" [(ngModel)]="model.Industry" name="Industry" required="true" #Industry="ngModel">
+          <option *ngFor="let list of studentData.Industry.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+        <div class="col-xs-4 col-sm-6 form-fields form-group">
+          <p>Interests<span class="required">*</span></p>
+          <select class="form-control" id="Interests" [(ngModel)]="model.Interests" name="Interests" required="true" #Interests="ngModel">
+          <option *ngFor="let list of studentData.Interests.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
 
 
 
+
+      </div>
+      <div class="row">
+
+        <div class="col-xs-4 col-sm-6 form-fields form-group">
+          <p>GPA<span class="required">*</span></p>
+          <select class="form-control" id="GPA" [(ngModel)]="model.GPA" name="GPA" required="true" #GPA="ngModel">
+          <option *ngFor="let list of studentData.GPA.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
+
+        <div class="col-xs-4 col-sm-6 form-fields form-group form-group">
+          <p>Major<span class="required">*</span></p>
+          <select class="form-control" id="Major" [(ngModel)]="model.Major" name="Major" required="true" #Major="ngModel">
+          <option *ngFor="let list of studentData.Major.data" [value]=list       
+          >{{list}}</option>
+        
+        </select>
+        </div>
 
       </div>
     </div>
@@ -154,24 +159,25 @@
 
 
 
-    <button type="submit" class="btn btn-success" [disabled]="!studentForm.form.valid">Submit</button>
-    <button type="button" class="btn btn-default" (click)="newStudent(); student-form.reset()">New Recommendation</button>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()" [disabled]="!studentForm.valid">Submit</button>
+    <button type="button" class="btn btn-default" (click)="newStudent()">Refresh</button>
+    <button type="button" class="btn btn-default" (click)="sampleStudent()">Sample</button>
   </form>
 </div>
 
-<div [hidden]="!submitted" class="container">
-  <h2>We Recommend:</h2>
+<div [hidden]="!submitted" class="container" style="max-width:600px; margin-top:20px; padding:20px; background-color:#e8e8e8;">
+  <h4 style="margin-bottom:20px;">We Recommend:</h4>
 
   <!--<li>{{resultData | json}}</li> -->
-   <div class="row">
-    <div class="thumbnail card col-xs-4" *ngFor="let item of resultData">
-       <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="row">
+    <div class="img-thumbnail col-xs-6" *ngFor="let item of resultData">
+
       <div class="card-block">
-        <h4 class="card-title">{{item}}</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h4 class="card-title">{{item.name}}</h4>
+        <p class="card-text">{{item.description}}</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
       </div>
     </div>
-    
-  </div> 
+
+  </div>
 </div>

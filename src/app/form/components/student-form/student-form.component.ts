@@ -12,12 +12,14 @@ import { Student } from "../../model/student";
 export class StudentFormComponent implements OnInit {
   studentData: any;
   worldData: any;
-  resultData: any;
+  resultData: any[] = [{ "name": "Test", "description": "Test Description" }, { "name": "Test", "description": "Test Description" }, { "name": "Test", "description": "Test Description" }];
   hidden: boolean = false;
   constructor(private _studentService: StudentService) { }
 
   ngOnInit() {
     var me = this;
+    console.log(this.model);
+
     this._studentService.getConfigData();
     this._studentService.readConfigDataObservable.subscribe(val => {
       console.log(val);
@@ -35,29 +37,41 @@ export class StudentFormComponent implements OnInit {
       }
     });
 
+    this._studentService.readResultDataObservable.subscribe(val => {
+      console.log(val.length, val);
+      if (Object.keys(val).length > 0) {
+        // me.resultData = val[0];
+        // me.hidden = true;
+      }
+    });
+
   }
 
 
 
-  model = new Student(12, "Boston", "Male", 2.0, "Asian", "Hinduism", "Finance", "Business", "Visual Arts");
+  model = new Student(18, "Boston", "Male", 2.0, "Asian", "Hinduism", "Finance", "Business", "Visual Arts");
 
   submitted = false;
+
+  newStudent() {
+    this.submitted = false;
+    this.model = new Student(-1, '', '', 1, '', '', '', '', '');
+  }
+
+  sampleStudent() {
+    this.submitted = false;
+    this.model = new Student(18, 'Boston', 'Male', 2, 'Asian', 'Hinduism', 'Retail', 'Business', 'Visual Arts');
+  }
 
   onSubmit() {
     var me = this;
 
     this.submitted = true;
     this._studentService.postFormData(this.model);
-   
 
-    this._studentService.readResultDataObservable.subscribe(val => {
-      console.log(val);
-      if (Object.keys(val).length > 0) {
-        me.resultData = val;
-        me.hidden = true;
-      }
-    });
-   //console.log("Result: "+me.resultData);
+
+
+    //console.log("Result: "+me.resultData);
   }
 
   // newStudent(){
