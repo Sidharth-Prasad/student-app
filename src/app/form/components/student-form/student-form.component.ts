@@ -12,7 +12,7 @@ import { Student } from "../../model/student";
 export class StudentFormComponent implements OnInit {
   studentData: any;
   worldData: any;
-  resultData: any[] = [{ "name": "Test", "description": "Test Description" }, { "name": "Test", "description": "Test Description" }, { "name": "Test", "description": "Test Description" }];
+  resultData: any;
   hidden: boolean = false;
   constructor(private _studentService: StudentService) { }
 
@@ -38,6 +38,8 @@ export class StudentFormComponent implements OnInit {
     });
 
     this._studentService.readResultDataObservable.subscribe(val => {
+      if(val && val.length>0)
+      me.resultData = val;
       console.log(val.length, val);
       if (Object.keys(val).length > 0) {
         // me.resultData = val[0];

@@ -58,9 +58,9 @@ export class StudentService {
 
   }
 
+
   getItemInfo(rec: any){
 
-    var temp = [];
     for(var i in rec){
       var data = rec[i];
 
@@ -72,9 +72,9 @@ export class StudentService {
       // .get('http://localhost:8000/iteminfo?item={' + '"ID":'+ '"' + data + '}"',"")
       .get('http://localhost:8000/iteminfo?item='+JSON.stringify(params))
       .map(response => response.json())
-      .subscribe(res => { temp.push(res)  });  
+      .subscribe(res => { this.resultData.next(res);  });  
 
-    
-     this.resultData.next(temp);
   }
+
+  
 }

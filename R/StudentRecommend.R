@@ -4,6 +4,7 @@ library(class)
 library(jsonlite)
 
 #' @get /iteminfo
+#' @json
 iteminfo <- function(item){
   setwd("C:/Users/SidhPras/git/student-app/R")
   itemInfo <- read.csv("ItemInfo.csv", head=TRUE, sep=",")
@@ -15,16 +16,13 @@ iteminfo <- function(item){
   item <- as.data.frame(item)
   item <- t(item)
   itemdim <- as.matrix(dim(item))
-  print(item)
-  print(itemdim) 
   results <- itemInfo[1:itemdim[2],]
   results[1:itemdim[2],1:itemInfodim[2]] <- 0
-  print(results)
   for(i in 1:itemdim[2]){
     results[i,] <- itemInfo[item[i],]
   }
-  results <- as.data.frame(results)
-  results[1]
+  results <- data.frame(results)
+  results
 }
 
 #' @post /recommend
