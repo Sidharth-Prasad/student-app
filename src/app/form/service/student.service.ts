@@ -60,14 +60,14 @@ export class StudentService {
 
   getItemInfo(rec: any){
 
-    var temp = ['Movie 1','Movie 2'];
+    var temp = [];
     for(var i in rec){
       var data = rec[i];
 
-      // this.http
-      // .post('http://localhost:8000/recommend?student='+ JSON.stringify(data),"")
-      // .map(response => response.json())
-      // .subscribe(res => { temp.push(res)  }); 
+      this.http
+      .post('http://localhost:8000/itemInfo?item='+ JSON.stringify(data),"")
+      .map(response => response.json())
+      .subscribe(res => { temp.push(res)  });  
 
     }
      this.resultData.next(temp);
